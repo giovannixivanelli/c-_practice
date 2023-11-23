@@ -4,17 +4,17 @@
 
 */
 
-int num = new Random().Next(1,100);
-int a = num % 7;
-int b = num % 23;
-if(a == 9 && b == 0)
-    {
-        Console.Write($"Число {num} кратно 7 и 23");
-    }
-else
-    {
-        Console.Write($"Число {num} не кратно 7 и 23");
-    }
+// int num = new Random().Next(1,100);
+// int a = num % 7;
+// int b = num % 23;
+// if(a == 9 && b == 0)
+//     {
+//         Console.Write($"Число {num} кратно 7 и 23");
+//     }
+// else
+//     {
+//         Console.Write($"Число {num} не кратно 7 и 23");
+//     }
 
 
 /*
@@ -30,36 +30,36 @@ else
 
 */
 
-int num = new Random().Next(10, 99);
-int a = num / 10;
-int b = num % 10;
-if(a > b)
-    {
-        Console.WriteLine($"У числа {num} наибольшая цифра равна {a}");
-    }
-else
-    {
-        Console.WriteLine($"У числа {num} наибольшая цифра равна {b}");
-    }
+// int num = new Random().Next(10, 99);
+// int a = num / 10;
+// int b = num % 10;
+// if(a > b)
+//     {
+//         Console.WriteLine($"У числа {num} наибольшая цифра равна {a}");
+//     }
+// else
+//     {
+//         Console.WriteLine($"У числа {num} наибольшая цифра равна {b}");
+//     }
 
 /*
 Задача 4: Напишите программу, которая на вход принимает натуральное число N, а на выходе показывает его цифры через запятую.
 
 */
 
-int n = 9544782; 
-int index = n; 
-int count = 1; 
-while (index > 10 )
-    {
-    index /= 10;
-    count *= 10;
-    }
+// int n = 9544782; 
+// int index = n; 
+// int count = 1; 
+// while (index > 10 )
+//     {
+//     index /= 10;
+//     count *= 10;
+//     }
 
-while (count > 1)
-    {
-    index = n / count;
-    Console.Write($"{index % 10}, ");
-    count /= 10;
-    }
-    Console.WriteLine(n%10);
+// while (count > 1)
+//     {
+//     index = n / count;
+//     Console.Write($"{index % 10}, ");
+//     count /= 10;
+//     }
+//     Console.WriteLine(n%10);
