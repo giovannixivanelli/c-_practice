@@ -87,3 +87,42 @@
 // int [] array = CreateArray(max, min, size);
 // ShowArray(array);
 // ShowNumbers(array);
+
+/*
+Задача 3: Задайте массив из вещественных чисел с ненулевой дробной частью. 
+Найдите разницу между максимальным и минимальным элементов массива.
+*/
+
+// void CreateArray(double[] array)
+// {
+//     Console.WriteLine("Массив:");
+//     for (int index = 0; index < array.Length; index++)
+//     {
+//         array[index] = new Random().NextDouble() * 100.0 - 50.0; 
+//         Console.Write(array[index] + " " );
+//     }
+//     Console.WriteLine();
+// }
+// void ShowArray(double[] array)
+// {
+//     double min = array[0];
+//     double max = min;
+    
+//     for (int index = 0; index < array.Length; index++)
+//         {
+//             if (array[index] < min)
+//             {
+//                 min = array[index];
+//             } else if (array[index] > max)
+//             {
+//             max = array[index];
+//             }
+//         }
+//         Console.WriteLine("Разница между минимальным и максимальным элементами массива: " + (max - min));
+// }
+
+
+// double[] array = new double[3];
+
+// CreateArray(array);
+// ShowArray(array);
