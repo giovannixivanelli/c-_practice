@@ -1,104 +1,111 @@
-﻿// Есть ли число в массиве/ да или нет
+﻿// Задайте двумерный массив. Найдите элементы, у которых оба индекса чётные, 
+// и замените эти элементы на их квадраты.
 
-// int[] createArray(int min, int max, int size) // размер массива в int size так как у нас статический массив
-//     {
-    
-//         int [] array = new int [size]; //
-
-//         for(int i = 0; i < size; i++) // цикл для заполнения
-//             {
-//                 array[i] = new Random().Next(min, max+1); // +1 чтоб до выбранного числа включительон
-//             }
-//         return array;
-//     }; 
-
-// void showArray(int [] array) // функция для вывода массива
-//     {
-//         for(int i = 0; i < array.Length; i++)
-//             {
-//                 Console.Write(array[i +" "]);
-//             }
-//         Console.WriteLine(); // перевод строки
-//     }
-
-// bool findDigit(int[] array, int digit)
-//     {
-
-//         for(int i = 0; i < array.Length; i++)
-//             {
-//                 if(array[i] = digit)
-//                     {
-//                         return true;
-//                     }
-//             }
-//         return false;
-//     }
-
-// Console.WriteLine("Enter array's size");
-// int size = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine("Enter array's min");
-// int min = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine("Enter array's max");
-// int max = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine("Enter a digit");
-// int digit = Convert.ToInt32(Console.ReadLine());
-
-// int[] array = createArray(min, max, size);
-
-// showArray(array);
-// bool result = findDigit(array, digit);
-// if(result == true)
-//     {
-//         Console.WriteLine("Да");
-//     }
-// else
-//     {
-//         Console.WriteLine("Нет");
-//     }
-
-int [] CreateArray(int min, int max, int size){
-
-    int [] array = new int [size];
-    for(int i = 0; i<size; i++){
-        array[i] = new Random().Next(min, max+1);
-    }
-    return array; 
-}
-
-void ShowArray(int [] array){
-    
-    for(int i = 0; i<array.Length;i++){
-        Console.Write(array[i]+" ");
-    }
-    Console.WriteLine();
-}
-
-bool FindDigit(int [] array, int digit){
-    //bool flag = false;
-    for(int i = 0; i<array.Length; i++){
-        if(array[i] == digit){
-           return true; 
+int [,] Create2dArray(int row, int col, int min, int max){
+    int [,] array = new int [row,col];
+    for (int i =0; i<row; i++){
+        for(int j = 0; j<col;j++){
+            array[i,j] = new Random().Next(min, max+1);
         }
     }
-    return false;
+    return array;
 }
 
+void Show2dArray(int [,] array){
+    for(int i = 0; i<array.GetLength(0); i++){
+        for(int j=0; j<array.GetLength(1); j++){
+            Console.Write(array[i,j]+" ");
+        }
+        Console.WriteLine();
+    }
+}
 
-Console.WriteLine("Enter array size");
-int size = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Enter array min");
+void ShowArray(double [] array)
+    {
+        for(int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i]+" ");
+            }
+        Console.WriteLine();
+    }
+
+// void Show2dSquare(int [,] array){
+//     for(int i = 0; i<array.GetLength(0); i++){
+//         for(int j=0; j<array.GetLength(1); j++){
+//             if(i%2==0 && j%2==0){
+//               Console.Write(array[i,j]*array[i,j]+" ");  
+//             }
+//             else{
+//                 Console.Write(array[i,j]+" ");
+//             }
+            
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// void ShowArrayDiag(int [,] array)
+//     {   
+//         int count = 0;
+//         for(int i = 0; i < array.GetLength(0); i++)
+//             {
+//                 for(int j = 0; j < array.GetLength(1); j++)
+//                     {
+//                         if(i == j)
+//                             {
+//                                 count += ShowArrayDiag[i,j];
+//                             }
+                        
+//                     }
+//             }
+//         Console.WriteLine(count+" ");
+//     }
+// Задайте двумерный массив. Найдите сумму элементов, 
+// находящихся на главной диагонали (с индексами (0,0); (1;1) и т.д.
+
+// void ShowArrayDiago(int [,] array){
+//     int count = 0;
+//     for(int i = 0; i<array.GetLength(0); i++){
+//         for(int j=0; j<array.GetLength(1); j++){
+//             if(i==j){
+//                 count += array[i,j];
+//             }
+//         }
+//     }
+//     Console.WriteLine(count+" ");
+// }
+
+// Задайте двумерный массив из целых чисел. 
+// Сформируйте новый одномерный массив, состоящий из 
+// средних арифметических значений по строкам двумерного массива. 
+
+// double [] Average2dArray(int [,] array){
+//     double [] createdArray = new double [array.GetLength(0)];
+//     for(int i = 0; i<array.GetLength(0); i++){
+//         double count = 0;
+//         for(int j = 0; j<array.GetLength(1); j++){
+//             count+=array[i,j];
+//         }
+//         createdArray[i] = count/array.GetLength(0);
+//     }
+//     return createdArray;
+// }
+
+
+
+Console.WriteLine("Enter row numbers: ");
+int row = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter col numbers: ");
+int col = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter min value: ");
 int min = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Enter array max");
+Console.WriteLine("Enter max value: ");
 int max = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Enter search digit");
-int digit = Convert.ToInt32(Console.ReadLine());
 
-int [] array = CreateArray(min, max, size);
-ShowArray(array);
-bool res = FindDigit(array, digit);
-if(res == true){
-    Console.WriteLine("ДА");
-}
-else{
-    Console.WriteLine("Нет");
-}
+int [,] created2dArray = Create2dArray(row, col, min, max);
+Show2dArray(created2dArray);
+Console.WriteLine();
+double [] createdArray = Average2DArray(created2dArray);
+ShowArray(createdArray);
+// ShowArrayDiag(created2dArray);
+
